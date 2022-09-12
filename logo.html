@@ -172,7 +172,7 @@
                             let sizelogo = canvas.width/6;
                             let logo_X = canvas.width - (canvas.width/6 + canvas.width/30)
                             let logo_Y = distance
-                            if(l==1){
+                            if(l==1 && canvas.height<= distance){
                                 ctx.drawImage(logo, canvas.width - (canvas.width/6 + canvas.width/30), canvas.height - (canvas.width/6 + canvas.width/30), sizelogo, sizelogo)
                             }else
                                 if(canvas.height > distance - makeup_Y){
