@@ -170,41 +170,44 @@
                             let distance = img.width/9*16;
                             let coutdistance = parseInt(img.height / distance);
                             let sizelogo = canvas.width/6;
-                            let logo_X = canvas.width - (canvas.width/5 + canvas.width/30)
+                            let logo_X = canvas.width - (canvas.width/6 + canvas.width/30)
                             let logo_Y = distance
-                            if(canvas.height > distance - makeup_Y){
-                                cut=0
-                                logo_Y = distance - makeup_Y
-                                ctx.drawImage(logo, logo_X, logo_Y, sizelogo, sizelogo)
-                                if(logo_Y + distance < canvas.height){
-                                    logo_Y = logo_Y + distance
-                                    ctx.drawImage(logo, logo_X, logo_Y, sizelogo, sizelogo)                                 }
-                                if(logo_Y + sizelogo > canvas.height){
-                                    check = false;
-                                    cut = canvas.height - logo_Y;
-                                }
-                                makeup_Y = canvas.height-logo_Y
-                            }else{
-                                if(check == false){
-                                    ctx.drawImage(logo, logo_X, -cut, sizelogo, sizelogo)
-                                    check=true
-                                    if(-cut + distance < canvas.height){
-                                        logo_Y=-cut + distance
-                                        ctx.drawImage(logo, logo_X, logo_Y, sizelogo, sizelogo)
-                                    }else{
-                                        makeup_Y = cut + canvas.height
+                            if(l==1){
+                                ctx.drawImage(logo, canvas.width - (canvas.width/6 + canvas.width/30), canvas.height - (canvas.width/6 + canvas.width/30), sizelogo, sizelogo)
+                            }else
+                                if(canvas.height > distance - makeup_Y){
+                                    cut=0
+                                    logo_Y = distance - makeup_Y
+                                    ctx.drawImage(logo, logo_X, logo_Y, sizelogo, sizelogo)
+                                    if(logo_Y + distance < canvas.height){
+                                        logo_Y = logo_Y + distance
+                                        ctx.drawImage(logo, logo_X, logo_Y, sizelogo, sizelogo)                                 }
+                                    if(logo_Y + sizelogo > canvas.height){
+                                        check = false;
+                                        cut = canvas.height - logo_Y;
                                     }
-                                    cut =0;
-                                    
+                                    makeup_Y = canvas.height-logo_Y
                                 }else{
-                                    if(distance - makeup_Y < canvas.height){
-                                        ctx.drawImage(logo, logo_X, logo_Y, sizelogo, sizelogo)
-                                        makeup_Y = canvas.height-logo_Y
+                                    if(check == false){
+                                        ctx.drawImage(logo, logo_X, -cut, sizelogo, sizelogo)
+                                        check=true
+                                        if(-cut + distance < canvas.height){
+                                            logo_Y=-cut + distance
+                                            ctx.drawImage(logo, logo_X, logo_Y, sizelogo, sizelogo)
+                                        }else{
+                                            makeup_Y = cut + canvas.height
+                                        }
+                                        cut =0;
+                                        
                                     }else{
-                                        makeup_Y = canvas.height
-                                    }
-                                }  
-                            }      
+                                        if(distance - makeup_Y < canvas.height){
+                                            ctx.drawImage(logo, logo_X, logo_Y, sizelogo, sizelogo)
+                                            makeup_Y = canvas.height-logo_Y
+                                        }else{
+                                            makeup_Y = canvas.height
+                                        }
+                                    }  
+                                }      
                         }
                         img.src = reader.result;
                     }
