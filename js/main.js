@@ -34,3 +34,13 @@ document.getElementById("checklogo1").onclick = function(){
         document.getElementById("logo__location").style.display ="none"
     }
 }
+var menu = false
+document.getElementById("checkmenu").onclick = function(){
+   if(menu==false){
+    document.getElementById("menu").style.display = "block"
+    menu = true
+   }else{
+    document.getElementById("menu").style.display = "none"
+    menu = false
+   }
+}

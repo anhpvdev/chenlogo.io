@@ -1,0 +1,21 @@
+@media (max-width: 750px){
+    .menu{
+        position: absolute;
+        background-color: black;
+        width: 300px;
+        position: fixed;
+        top: 60px;
+        display: none;
+    }
+
+    #listimg{
+        width: 90%;
+        margin: auto;
+    }
+
+    .header--menu >button{
+        display: block;
+    }
+
+    
+}

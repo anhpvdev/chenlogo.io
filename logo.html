@@ -6,11 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bản vá 3</title>
     <link rel="stylesheet" href="./css/logo.css">
+    <link rel="stylesheet" href="./css/responsive.css">
 </head>
 <body>
     <img id="logo" src="logo.svg" alt="" class="logo">
-    <div class="body">
-        <div class="menu">
+    <div class="header">
+        <div class="header--menu">
+            <button id="checkmenu" >Menu</button>
+        </div>
+        
+    </div>
+    <div class="view">
+        <div class="menu" id="menu">
             <div class="upimg">
                 <label for="uploader">Tải Ảnh Lên</label> <br>
                 <input type="file" class="input" id="uploader" onclick="uploadimg()" multiple>
@@ -55,7 +62,7 @@
                     <button id="insert">Chèn</button>
                 </div>
             </div>
-            <div class="dowimg">
+            <div class="dowimg" id="download">
                 <button onclick="dowallimg()" class="input">Download</button><br>
             </div>
         </div>
