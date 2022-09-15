@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(75, 73, 73);
+}
+
+.navbar{
+    width: 100%;
+    background-color: black;
+    height: 75px;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    max-width: 1200px;
+    height: 100%;
+}
+
+.input{
+    width: 100px;
+    border: 2px solid yellow;
+    background-color: black;
+    border-radius: 5px;
+    color: yellow;
+}
+label{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+#uploader{
+    text-align: center;
+    width: 300px;
+    color: yellow;
+}
+
+.upimg{
+    text-align: center;
+    margin: auto 20px;
+    font-size: 20px;
+    color: orange;
+}
+
+.upimg >input:hover{
+    cursor: pointer;
+}
+
+.dowimg{
+    margin: auto 20px;
+    font-size: 20px;
+    color: orange;
+}
+.dowimg > button{
+    height: 40px;
+    font-size: 30px;
+    width: 190px;
+    font-weight: bold;
+    margin-left: 50%;
+}
+
+.dowimg > button:hover{
+    cursor: pointer;
+    border: 3px solid red;
+    background-color: rgb(53, 49, 49);
+    color: red;
+}
+
+.body{
+    display: flex;
+
+}
+
+
+.menu{
+    /* background-color: red; */
+    width: 400px;
+    height: 100em;
+    border-right: 3px solid white;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.main{
+    flex: 1;
+}
+
+.listimg{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+#listimg > *{
+    margin: auto;
+    display: block;
+}
+
+.main{
+    width: 100%;
+}
+
+.support>h1{
+    margin-top: 50px;
+    text-align: center;
+    color: yellow;
+    font-size: 50px;
+}
+.support>h2{
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+}
+img{
+    display: none;
+}

@@ -4,243 +4,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bản vá 2</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        body{
-            background-color: rgb(75, 73, 73);
-        }
-
-        .navbar{
-            width: 100%;
-            background-color: black;
-            height: 75px;
-        }
-        .header{
-            display: flex;
-            justify-content: center;
-            margin: auto;
-            max-width: 1200px;
-            height: 100%;
-        }
-
-        .input{
-            width: 100px;
-            border: 2px solid yellow;
-            background-color: black;
-            border-radius: 5px;
-            color: yellow;
-        }
-        label{
-            font-size: 25px;
-            font-weight: 700;
-        }
-
-        #uploader{
-            text-align: center;
-            width: 300px;
-            color: yellow;
-        }
-
-        .upimg{
-            text-align: center;
-            margin: auto 20px;
-            font-size: 20px;
-            color: orange;
-        }
-
-        .upimg >input:hover{
-            cursor: pointer;
-        }
-
-        .dowimg{
-            margin: auto 20px;
-            font-size: 20px;
-            color: orange;
-        }
-        .dowimg > button{
-            height: 40px;
-            font-size: 30px;
-            width: 190px;
-            font-weight: bold;
-            margin-left: 50%;
-        }
-
-        .dowimg > button:hover{
-            cursor: pointer;
-            border: 3px solid red;
-            background-color: rgb(53, 49, 49);
-            color: red;
-        }
-
-        .listimg{
-            width: 100%;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        #listimg > *{
-            margin: auto;
-            display: block;
-        }
-
-        .main{
-            width: 100%;
-        }
-
-        .support>h1{
-            margin-top: 50px;
-            text-align: center;
-            color: yellow;
-            font-size: 50px;
-        }
-        .support>h2{
-            margin-top: 20px;
-            text-align: center;
-            color: white;
-        }
-        img{
-            display: none;
-        }
-    </style>
+    <title>bản vá 3</title>
+    <link rel="stylesheet" href="./css/logo.css">
 </head>
 <body>
-    <div class="navbar">
-        <div class="header">
+    <img id="logo" src="logo.svg" alt="" class="logo">
+    <div class="body">
+        <div class="menu">
             <div class="upimg">
                 <label for="uploader">Tải Ảnh Lên</label> <br>
                 <input type="file" class="input" id="uploader" onclick="uploadimg()" multiple>
+            </div>
+
+            <div class="logoimage">
+                <div class="logo--size">
+                    <input type="number" id="logosize"> <label for="">kích thước logo</label>
+                </div>
+                <div class="logo--menu">
+                    <div>
+                        <input type="checkbox" id="checklogo1"> <label for="">Chèn vị trí cố định mỗi ảnh</label>
+                        <div id="logo__location" class="logo--menu__location">
+                            <div>
+                                <h1>Trên</h1>
+                                <div>
+                                    <input type="checkbox" id="checkTL"> <label for="">Trái</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="checkTR"> <label for="">Phải</label>
+                                </div>
+                            </div>
+                            <div>
+                                <h1>dưới</h1>
+                                <div>
+                                    <input type="checkbox" id="checkBL"> <label for="">Trái</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="checkBR"> <label for="">Phải</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="checklogo2"> <label for="">chèn theo khoảng cách</label>
+                    </div>
+                    <div>
+                        <input type="checkbox"> <label for="">oo 3</label>
+                    </div>
+                </div>
+                <div class="logo--insert">
+                    <button id="insert">Chèn</button>
+                </div>
             </div>
             <div class="dowimg">
                 <button onclick="dowallimg()" class="input">Download</button><br>
             </div>
         </div>
+        <div class="main">
+            <div id="listimg">
+                <!-- <canvas id="canvas"></canvas> -->
+            </div>
+            <div class="support">
+                <h1>Hướng Dẩn Sử Dụng</h1>
+                <h2>Hình ảnh sẽ được tải về dưới dạng 1.jpg, 2.jpg, 3.... nên các bạn hãy lưu ý trước khi tải</h2>
+                <h2>B1: truy cập vào: <b style="color: white;">chrome://settings/downloads</b> sau đó tại mục vị trí chỉnh về nơi muốn lưu ảnh ko thì nó lưu về download :))</h2>
+                <h2>B2: Chọn tệp > chọn tất cả hình ảnh bạn muốn </h2>
+                <h2>B3: nhập kích thước logo vào ( khuyến nghị tầm 5 > 6, 5 thì logo rộng = 1/5 ảnh, 6 thì 1/6)</h2>
+                <h2>B4: chọn vào cái gì đó, mà bây h chỉ có cái đầu tiên thôi :)) chèn theo vị trí cố định, tick vào</h2>
+                <h2>B5: nhấn chèn, bạn sẽ thấy bức ảnh của mình đã bị đóng dấu</h2>
+                <h2>B6: Ấn download để tải tất cả ảnh về :))</h2>
+                <h2>ps: logo quá mờ ? ấn chèn nhiều lần nó chồng lên tự rõ :)) </h2>
+            </div>
+        </div>
     </div>
 
-   <div class="main">
-        <div id="listimg">
-            <!-- <canvas id="canvas"></canvas> -->
-        </div>
-        <div class="support">
-            <h1>Hướng Dẩn Sử Dụng</h1>
-            <h2>Hình ảnh sẽ được tải về dưới dạng 1.jpg, 2.jpg, 3.... nên các bạn hãy lưu ý trước khi tải</h2>
-            <h2>Nó tải về mục download đấy :)) ditcu</h2>
-            <h2>B2: Chọn tệp > chọn tất cả hình ảnh bạn muốn </h2>
-            <h2>b3: Ấn download để tải tất cả ảnh về :))</h2>
-            <h2>de y cai ten mien no nhuw nay http://127.0.0.1:5500/Bản%20Vá%202.html thi ok</h2>
-            <img id="logo" src="logo.svg" alt="">
-        </div>
-   </div>
-
-    <script>
-        //bien add logo
-        let makeup_Y =0;
-        let check = true;
-        let cut = 0
-        const lastimg = document.getElementById('lastimg');
-        const canvas = document.getElementById("canvas");
-        const logo = document.getElementById("logo");
-        //uplload img
-        function uploadimg(){
-            const uploadImage = (e) => {
-                var l = e.target.files.length;
-                var k=0
-                let listimg = document.getElementById('listimg')
-                for(i=1;i<=l;i++){
-                    //get canvas ++
-                    let temp = document.createElement('canvas')
-                    temp.setAttribute('id', 'canvas')
-                    listimg.appendChild(temp)
-
-                    // add image
-                    const canvas = document.getElementById("canvas")
-                    let ctx = canvas.getContext("2d")
-                    let reader = new FileReader()
-                    let img = new Image()
-                    reader.onload = () => {
-                        img.onload = () => { 
-                            canvas.width = img.width;
-                            canvas.height = img.height;
-                            ctx.drawImage(img,0,0,img.width, img.height);
-
-                            //add logo
-                            let distance = img.width/9*16;
-                            let coutdistance = parseInt(img.height / distance);
-                            let sizelogo = canvas.width/6;
-                            let logo_X = canvas.width - (canvas.width/6 + canvas.width/30)
-                            let logo_Y = distance
-                            if(l==1){
-                                if(canvas.height <= distance){
-                                    ctx.drawImage(logo, canvas.width - (canvas.width/6 + canvas.width/30), canvas.height - (canvas.width/6 + canvas.width/30), sizelogo, sizelogo)
-                                }else{
-                                    for(i=1;i<=distance;i++){
-                                        ctx.drawImage(logo, canvas.width - (canvas.width/6 + canvas.width/30), logo_Y, sizelogo, sizelogo)
-                                        logo_Y = logo_Y +distance
-                                    }
-                                }
-                                
-                            }else
-                                if(canvas.height > distance - makeup_Y){
-                                    cut=0
-                                    logo_Y = distance - makeup_Y
-                                    ctx.drawImage(logo, logo_X, logo_Y, sizelogo, sizelogo)
-                                    if(logo_Y + distance < canvas.height){
-                                        logo_Y = logo_Y + distance
-                                        ctx.drawImage(logo, logo_X, logo_Y, sizelogo, sizelogo)                                 }
-                                    if(logo_Y + sizelogo > canvas.height){
-                                        check = false;
-                                        cut = canvas.height - logo_Y;
-                                    }
-                                    makeup_Y = canvas.height-logo_Y
-                                }else{
-                                    if(check == false){
-                                        ctx.drawImage(logo, logo_X, -cut, sizelogo, sizelogo)
-                                        check=true
-                                        if(-cut + distance < canvas.height){
-                                            logo_Y=-cut + distance
-                                            ctx.drawImage(logo, logo_X, logo_Y, sizelogo, sizelogo)
-                                        }else{
-                                            makeup_Y = cut + canvas.height
-                                        }
-                                        cut =0;
-                                        
-                                    }else{
-                                        if(distance - makeup_Y < canvas.height){
-                                            ctx.drawImage(logo, logo_X, logo_Y, sizelogo, sizelogo)
-                                            makeup_Y = canvas.height-logo_Y
-                                        }else{
-                                            makeup_Y = canvas.height
-                                        }
-                                    }  
-                                }      
-                        }
-                        img.src = reader.result;
-                    }
-                    reader.readAsDataURL(e.target.files[k])
-                    k++;
-                    temp.setAttribute('id','')
-                    temp.setAttribute('class','canvas')
-                }
-            };
-            const imageLoader = document.getElementById('uploader');
-            imageLoader.addEventListener("change", uploadImage);
-        }
-        //download all image
-        function dowallimg(){
-            var hicanvas = document.getElementsByClassName("canvas");
-            console.log(hicanvas)
-            for(var r=0;r<hicanvas.length;r++){
-                let image = hicanvas[r].toDataURL();
-                let link = document.createElement("a");
-                let page = r+1;
-                link.href = image;
-                link.download = page+".jpg";
-                link.click();
-            }          
-        }
-    </script>
+    <script src="./js/upimg.js"></script>
+    <script src="./js/logo.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
